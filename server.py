@@ -11,16 +11,16 @@ print ('Server listening....')
 while True:
     conn, addr = s.accept()     # Establish connection with client.
     print ('Got connection from', addr)
-    data = conn.recv(1024)
+    data = conn.recv(10000)
     print('Server received', repr(data))
 
     filename='1.txt'
     f = open(filename,'rb')
-    l = f.read(1024)
+    l = f.read(10000)
     while (l):
        conn.send(l)
        print('Sent ',repr(l))
-       l = f.read(1024)
+       l = f.read(10000)
     f.close()
 
     print('Done sending')
