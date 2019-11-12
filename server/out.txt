@@ -1,0 +1,6 @@
+the file 1 does not exit
+the file 2 is not modified
+the file 3 does not exit
+File successfully pushed
+File successfully pushed
+File successfully pushed
