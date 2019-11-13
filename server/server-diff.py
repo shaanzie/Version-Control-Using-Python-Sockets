@@ -44,7 +44,7 @@ while flag:
     else:
        print("the file %s does not exist\n" % str(filecount))
        with open("out.txt", "a") as text_file:
-            text_file.write("the file {0} does not exit\n".format(str(filecount)))
+            text_file.write("the file {0} does not exist\n".format(str(filecount)))
     ftoread = open('out.txt', 'r')
     l = ftoread.read(1024)
     while (l):
