@@ -30,7 +30,7 @@ import os
 
 filelist = str()
              # Create a socket object
-host = socket.gethostname()     # Get local machine name
+host = "192.168.43.76"    # Get local machine name
 port = 6008                    # Reserve a port for your service.
 
 
