@@ -30,7 +30,7 @@ import os
 
 filelist = str()
              # Create a socket object
-host = "192.168.43.76"    # Get local machine name
+host = socket.gethostname()     # Get local machine name
 port = 6008                    # Reserve a port for your service.
 
 
@@ -44,10 +44,10 @@ for root,d_names,f_names in os.walk('./cl'):
             print(i)
             contents = str()
             contents = i + "|" + g.read()
-            print(contents)
+            # print(contents)
             s = socket.socket()
             s.connect((host, port))
-            s.send(contents)
+            s.send(contents.encode())
             with open('./cl/received_file', 'wb') as f:
                 # print ('file opened')
                 while True:
@@ -71,7 +71,8 @@ if f.mode == 'r':
     contents = f.read()
 
 if(len(contents)!=0):
-    print(contents)
+    pass
+    # print(contents)
 else:
     print("No changes, safe to commit")
 

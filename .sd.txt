@@ -1,0 +1,4 @@
+/sdcard/
+/sdcard/.sd.txt
+/sdcard/Movies
+/sdcard/Movies/OnePlus 5T.mp4
