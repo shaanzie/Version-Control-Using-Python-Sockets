@@ -32,19 +32,19 @@ while flag:
                count += 1
                charc += 1
             else:
-                  print ("the file %s is modified at character number\n" % str(filecount), str(charc))
+                  print ("the file %s is modified at character number\n" % contents[0], str(charc))
                   with open("out.txt", "a") as text_file:
-                     text_file.write("the file {0} is modified at character number {1} \n".format(str(filecount), (str(charc))))
+                     text_file.write("the file {0} is modified at character number {1} \n".format(contents[0], (str(charc))))
                   break
       #  print(count)
       if count == min(len(s1), len(lines1)):
-         print ("the file %s is not modified\n" % str(filecount))
+         print ("the file %s is not modified\n" % contents[0])
          with open("out.txt", "a") as text_file:
-            text_file.write("the file %s is not modified\n" % str(filecount))
+            text_file.write("the file %s is not modified\n" % contents[0])
     else:
-       print("the file %s does not exist\n" % str(filecount))
+       print("the file %s does not exist\n" % contents[0])
        with open("out.txt", "a") as text_file:
-            text_file.write("the file {0} does not exist\n".format(str(filecount)))
+            text_file.write("the file {0} does not exist\n".format (contents[0]))
     ftoread = open('out.txt', 'r')
     l = ftoread.read(1024)
     while (l):

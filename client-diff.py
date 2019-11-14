@@ -44,7 +44,7 @@ for root,d_names,f_names in os.walk('./cl'):
             print(i)
             contents = str()
             contents = i + "|" + g.read()
-            print(contents)
+            # print(contents)
             s = socket.socket()
             s.connect((host, port))
             s.send(contents)
@@ -71,7 +71,8 @@ if f.mode == 'r':
     contents = f.read()
 
 if(len(contents)!=0):
-    print(contents)
+    pass
+    # print(contents)
 else:
     print("No changes, safe to commit")
 
