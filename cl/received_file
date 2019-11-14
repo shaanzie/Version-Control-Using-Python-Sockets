@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 the file a.txt does not exist
 the file received_file does not exist
 the file README.md does not exist
@@ -5,3 +6,5 @@ File successfully pushed
 File successfully pushed
 File successfully pushed
 Thank you for connecting
+=======
+>>>>>>> 13094acee79b6cb945a9954e6d9352126016a398

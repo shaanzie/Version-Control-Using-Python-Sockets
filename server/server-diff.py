@@ -19,7 +19,7 @@ while flag:
     conn, addr = s.accept()     # Establish connection with client.
     print ('Got connection from', addr)
     data = conn.recv(10000)
-    contents = data.split('|')
+    contents = data.decode().split('|')
     print("reading file ", contents[0])
     lines1 = contents[1]
     if((os.path.exists(contents[0]))):
@@ -32,28 +32,28 @@ while flag:
                count += 1
                charc += 1
             else:
-                  print ("the file %s is modified at character number\n" % str(filecount), str(charc))
+                  print ("the file %s is modified at character number\n" % contents[0], str(charc))
                   with open("out.txt", "a") as text_file:
-                     text_file.write("the file {0} is modified at character number {1} \n".format(str(filecount), (str(charc))))
+                     text_file.write("the file {0} is modified at character number {1} \n".format(contents[0], (str(charc))))
                   break
       #  print(count)
       if count == min(len(s1), len(lines1)):
-         print ("the file %s is not modified\n" % str(filecount))
+         print ("the file %s is not modified\n" % contents[0])
          with open("out.txt", "a") as text_file:
-            text_file.write("the file %s is not modified\n" % str(filecount))
+            text_file.write("the file %s is not modified\n" % contents[0])
     else:
-       print("the file %s does not exist\n" % str(filecount))
+       print("the file %s does not exist\n" % contents[0])
        with open("out.txt", "a") as text_file:
-            text_file.write("the file {0} does not exit\n".format(str(filecount)))
+            text_file.write("the file {0} does not exist\n".format (contents[0]))
     ftoread = open('out.txt', 'r')
     l = ftoread.read(1024)
     while (l):
-       conn.send(l)
+       conn.send(l.encode())
        print('Sent ',l)
        break
     ftoread.close()
 
     print('Done sending')
-    conn.send('Thank you for connecting')
+    conn.send('Thank you for connecting'.encode())
     conn.close()
 s.close()

@@ -18,7 +18,7 @@ while flag:
     filecount += 1
     conn, addr = s.accept()     # Establish connection with client.
     print ('Got connection from', addr)
-    data = conn.recv(10000)
+    data = conn.recv(10000).decode()
     contents = data.split('|')
     print("reading file ", contents[0])
     lines1 = contents[1]
@@ -29,12 +29,12 @@ while flag:
     ftoread = open('out.txt', 'r')
     l = ftoread.read(1024)
     while (l):
-       conn.send(l)
+       conn.send(l.encode())
        print('Sent ',l)
        break
     ftoread.close()
 
     print('Done sending')
-    conn.send('Thank you for connecting')
+    conn.send('Thank you for connecting'.encode())
     conn.close()
 s.close()
